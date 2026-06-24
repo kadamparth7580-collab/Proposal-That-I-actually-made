@@ -1,0 +1,5 @@
+function go(n){document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));document.getElementById("p"+n).classList.add("active");if(n===4)meter();}
+function show(id){document.getElementById(id).style.display="block";}
+function meter(){let p=0;let i=setInterval(()=>{p+=5;fill.style.width=p+"%";percent.textContent=p+"%";if(p>=100){clearInterval(i);percent.textContent="∞ % Compatible 💜";nextBtn.style.display="inline-block";}},90)}
+function celebrate(){go(8);for(let i=0;i<120;i++){let h=document.createElement("div");h.className="heart";h.innerHTML="💜";h.style.left=Math.random()*100+"vw";h.style.fontSize=(15+Math.random()*25)+"px";document.getElementById("hearts").appendChild(h);setTimeout(()=>h.remove(),7000);}}
+setInterval(()=>{let h=document.createElement("div");h.className="heart";h.innerHTML="💜";h.style.left=Math.random()*100+"vw";document.getElementById("hearts").appendChild(h);setTimeout(()=>h.remove(),7000)},1200);
